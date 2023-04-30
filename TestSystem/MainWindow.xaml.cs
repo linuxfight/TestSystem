@@ -38,8 +38,6 @@ namespace TestSystem
 
         private void ButtonStart_Click(object sender, RoutedEventArgs e)
         {
-            var questions = DataAccessLayer.GetQuestions();
-            service.SetQuestions(questions);
             btnYes.IsEnabled = true;
             btnNo.IsEnabled = true;
             txtQuestion.Text = service.CurrentQuestionContent;

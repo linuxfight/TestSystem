@@ -28,7 +28,11 @@ namespace TestSystem.Services
 
         public TestSystemService()
         {
-            questions = new List<Question>();
+            var dbQuestions = DataAccessLayer.GetQuestions();
+            if (dbQuestions != null)
+                questions = dbQuestions.ToList();
+            else
+                questions = new List<Question>();
         }
 
         public void SetQuestions(List<Question> questions)
